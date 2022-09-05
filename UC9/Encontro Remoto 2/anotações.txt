@@ -1,0 +1,10 @@
+Instalação do VSCode
+Instalação das extensões do VSCode
+
+Criar o projeto de console
+Criar a superclasse Pessoa e as classes PessoaFisica e PessoaJuridica
+Criar os atributos de cada classe
+
+Instanciar objeto de PF e PJ
+Atribuir valores para os atributos
+Imprimir dados no console
