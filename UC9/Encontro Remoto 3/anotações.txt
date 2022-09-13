@@ -1,0 +1,34 @@
+- Criar a classe Endereço
+	- Na superclasse, substituir o atributo endereço pelo Objeto Endereço
+	- No program.cs, instanciar o objeto endereço, atribuir os valores e chamar no console o endereço
+
+
+- Criar a pasta Interfaces
+
+- Criar a interface para Pessoa
+	- método pagar imposto
+
+- Criar a interface para PessoaFisica
+	- método para validar data de nascimento
+
+- Criar a interface para PessoaJuridica
+	- método para validar cnpj
+
+- Na superclasse Pessoa, herdar da sua interface IPessoa
+	- Implementar a interface
+
+- Na classe de pessoa fisica e juridica, herdar da superclasse Pessoa e de sua respectiva interface
+	- Implementar as interfaces
+
+- Alterar o método pagar imposto da superclasse para abstract
+
+- Na classe pessoa fisica e juridica, herdar o metodo de pagar imposto da classe abstrata
+
+
+INTERVALO
+
+Implementar o método de pagar imposto para pessoa fisica e jurídica e testar no program.cs
+
+
+
+
