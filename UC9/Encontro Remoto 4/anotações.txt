@@ -1,0 +1,10 @@
+- Implementar o método de validar data de nascimento passando uma data como argumento
+- Criar uma sobrecarga do método de validar data de nascimento passando uma string como argumento
+
+- Fazer testes na program.cs
+
+
+
+
+
+
