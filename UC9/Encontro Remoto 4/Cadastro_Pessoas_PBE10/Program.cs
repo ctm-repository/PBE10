@@ -5,7 +5,7 @@ using Cadastro_Pessoas_PBE10.Classes;
 PessoaFisica novaPessoaFisica = new PessoaFisica();
 novaPessoaFisica.Nome = "Fabi";
 novaPessoaFisica.Cpf = "02536998744";
-novaPessoaFisica.DataNascimento = new DateTime(2001, 12, 09);   // 
+novaPessoaFisica.DataNascimento = new DateTime(2001, 12, 09);
 novaPessoaFisica.Rendimento = 15000.55f;
 
 PessoaFisica metodosPf = new PessoaFisica();
