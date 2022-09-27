@@ -1,4 +1,4 @@
-- Implementar o método de validar cnpj usando Regex(expressão regular) e Substring.
+- Implementar o método de validar cnpj usando Regex(Expressão Regular) e Substring.
 
 - Fazer testes na program.cs
 
