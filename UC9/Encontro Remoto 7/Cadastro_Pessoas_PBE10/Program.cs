@@ -1,14 +1,15 @@
 ﻿using System.Globalization;
-using System.Text.RegularExpressions;
 using Cadastro_Pessoas_PBE10.Classes;
 
-
+Console.Clear();
+Console.ForegroundColor = ConsoleColor.Yellow;
 Console.WriteLine(@$"
 ===========================================
 |   Bem vindo ao sistema de cadastro de   |
 |      Pessoas Físicas e Jurídicas        |
 ===========================================
 ");
+Console.ResetColor();
 
 Utils.BarraCarregamento("Iniciando", 300, 10);
 
@@ -20,6 +21,7 @@ string? opcao;
 do
 {
     Console.Clear();
+    Console.ForegroundColor = ConsoleColor.Yellow;
     Console.WriteLine(@$"
 ===========================================
 |      Escolha uma das opções abaixo      |
@@ -30,7 +32,7 @@ do
 |             0 - Sair                    |
 ===========================================
 ");
-
+    Console.ResetColor();
     opcao = Console.ReadLine();
 
     switch (opcao)
@@ -41,6 +43,8 @@ do
 
             do
             {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine(@$"
 ===========================================
 |      Escolha uma das opções abaixo      |
@@ -51,6 +55,7 @@ do
 |      0 - voltar ao menu anterior        |
 ===========================================
 ");
+                Console.ResetColor();
                 opcaoPf = Console.ReadLine();
                 PessoaFisica metodosPf = new PessoaFisica();
 
@@ -71,10 +76,9 @@ do
 
                         //validação da data de nascimento
 
-                        bool dataValida;//variável que guarda a informação se a data é válida ou não
+                        bool dataValida; //variável que guarda a informação se a data é válida ou não
 
-                        //laço de repetição
-                        do
+                        do //laço de repetição
                         {
                             //entrada e armazenamento da data de nascimento digitada
                             Console.WriteLine(@$"Digite a data de nascimento ex: DD/MM/AAAA");
@@ -98,7 +102,9 @@ do
                             else
                             {
                                 //senão, mostra-se uma mensagem no console que a data não é válida
+                                Console.ForegroundColor = ConsoleColor.DarkRed;
                                 Console.WriteLine($"Data inválida, favor digitar uma data válida!");
+                                Console.ResetColor();
                             }
                         } while (dataValida == false);//enquanto a dataValida for false, repetir o laço 
 
@@ -149,10 +155,9 @@ do
 
                     case "2":
 
-                        //aqui listar pf
-                        if (listaPf.Count > 0)
+                        if (listaPf.Count > 0) //se o conteudo da lista for maior que 0
                         {
-                            foreach (PessoaFisica pf in listaPf)
+                            foreach (PessoaFisica pf in listaPf) //percorra a lista e traga os itens
                             {
                                 Console.WriteLine(@$"
                                 Nome: {pf.Nome}
@@ -160,28 +165,36 @@ do
                                 Data de nascimento: {pf.DataNascimento}
                                 Rendimento: {pf.Rendimento}
                                 Imposto á pagar: {metodosPf.PagarImposto(pf.Rendimento)}
-                                ");                                
+                                ");
                             }
-                            Console.WriteLine($"Aperte ENTER para continuar..");
-                            Console.ReadLine();                            
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            Console.WriteLine($"Aperte 'Enter' para continuar...");
+                            Console.ResetColor();
+                            Console.ReadLine();
                         }
                         else
                         {
-                            Console.WriteLine($"Lista vazia !!!");   
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                            Console.WriteLine($"Lista Vazia!!!");
+                            Console.ResetColor();
+                            Thread.Sleep(3000);
                         }
                         break;
                     case "0":
-                        //voltar para o menu anterior
+                        //caso 0  - voltar para o menu anterior
                         break;
                     default:
                         //mensagem genérica
-                        Console.WriteLine($"Opção inválida, por favor digite outra opção !");                        
+
+                        Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine($"Opção Inválida, por favor digite outra opção!");
+                        Console.ResetColor();
+                        Thread.Sleep(2000);
                         break;
                 }
             } while (opcaoPf != "0");
-         
-            Console.WriteLine("Aperte ENTER para continuar");
-            Console.ReadLine();
+
             break;
 
         case "2":

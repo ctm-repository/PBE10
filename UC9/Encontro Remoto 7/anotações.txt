@@ -1,0 +1,4 @@
+- Criar submenu com opções de cadastrar e listar pessoas fisicas
+
+- Criar submenu com opções de cadastrar e listar pessoas jurídicas (Alunos devem fazer)
+
