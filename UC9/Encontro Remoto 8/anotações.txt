@@ -1,0 +1,6 @@
+- Persistir dados de Pessoa Física em arquivo txt
+- Leitura de um arquivo txt
+- Persistir dados de Pessoa Jurídica em arquivo csv
+- Leitura de um arquivo csv
+
+
