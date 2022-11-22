@@ -10,7 +10,7 @@ Console.WriteLine(@$"
 ");
 Console.ResetColor();
 
-Utils.BarraCarregamento("Iniciando", 300, 10);
+Utils.BarraCarregamento("Iniciando", 100, 10);
 
 //lista para armazenar as pessoas físicas cadastradas
 List<PessoaFisica> listaPf = new List<PessoaFisica>();
@@ -207,21 +207,19 @@ do
 
         case "2":
             PessoaJuridica novaPessoaJuridica = new PessoaJuridica();
-
             Endereco novoEndereco = new Endereco();
+            PessoaJuridica metodosPj = new PessoaJuridica();
+
             novoEndereco.Logradouro = "Rua Niterói";
             novoEndereco.Numero = 180;
             novoEndereco.Complemento = "São Caetano do Sul - SP";
             novoEndereco.Comercial = true;
-
 
             novaPessoaJuridica.Nome = "Senai";
             novaPessoaJuridica.RazaoSocial = "Escola Senai de Informática Ltda";
             novaPessoaJuridica.Cnpj = "58352125000149";
             novaPessoaJuridica.Rendimento = 100000.99f;
             novaPessoaJuridica.Endereco = novoEndereco;
-
-            PessoaJuridica metodosPj = new PessoaJuridica();
 
             //chamada do método para inserir os dados de novaPessoaJuridica dentro de um arquivo csv
             metodosPj.Inserir(novaPessoaJuridica);

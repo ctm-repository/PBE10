@@ -67,7 +67,7 @@ namespace Cadastro_Pessoas_PBE10.Classes
             //criado um array de strings que recebe o objeto transformado em strings, ou seja, em partes
             //feito dessa maneira pq o método que vai inserir os dados espera receber um array de strings 
             //padrão que será salvo dentro do arquivo
-            string[] pjStrings = {$"{pj.Nome}, {pj.Cnpj}, {pj.RazaoSocial}"};
+            string[] pjStrings = {$"{pj.Nome},{pj.Cnpj},{pj.RazaoSocial}"};
 
             //metodo que salva o conteúdo dentro do arquivo
             //AppendAllLines = método que vai inserir todas as linhas dentro do arquivo
