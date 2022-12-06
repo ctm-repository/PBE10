@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Carlos\\Desktop\\Chapter\\Chapter\\Chapter.csproj": {}
+    "C:\\Users\\Carlos\\Desktop\\PBE10-Geral\\PBE10\\UC11\\Encontro Remoto 1\\Chapter\\Chapter\\Chapter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Carlos\\Desktop\\Chapter\\Chapter\\Chapter.csproj": {
+    "C:\\Users\\Carlos\\Desktop\\PBE10-Geral\\PBE10\\UC11\\Encontro Remoto 1\\Chapter\\Chapter\\Chapter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Carlos\\Desktop\\Chapter\\Chapter\\Chapter.csproj",
+        "projectUniqueName": "C:\\Users\\Carlos\\Desktop\\PBE10-Geral\\PBE10\\UC11\\Encontro Remoto 1\\Chapter\\Chapter\\Chapter.csproj",
         "projectName": "Chapter",
-        "projectPath": "C:\\Users\\Carlos\\Desktop\\Chapter\\Chapter\\Chapter.csproj",
+        "projectPath": "C:\\Users\\Carlos\\Desktop\\PBE10-Geral\\PBE10\\UC11\\Encontro Remoto 1\\Chapter\\Chapter\\Chapter.csproj",
         "packagesPath": "C:\\Users\\Carlos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Carlos\\Desktop\\Chapter\\Chapter\\obj\\",
+        "outputPath": "C:\\Users\\Carlos\\Desktop\\PBE10-Geral\\PBE10\\UC11\\Encontro Remoto 1\\Chapter\\Chapter\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Carlos\\AppData\\Roaming\\NuGet\\NuGet.Config",
