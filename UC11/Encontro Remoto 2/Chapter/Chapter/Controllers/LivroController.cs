@@ -89,7 +89,7 @@ namespace Chapter.Controllers
         /// <param name="livro">objeto a ser atualizado</param>
         /// <returns>status code 204</returns>
         /// <exception cref="Exception">mensagem de erro</exception>
-        [HttpPut]
+        [HttpPut("{id}")]
         public IActionResult Atualizar(int id, Livro livro)
         {
             try
@@ -109,7 +109,7 @@ namespace Chapter.Controllers
         /// <param name="id">id do livro a ser excluído</param>
         /// <returns>status code 204</returns>
         /// <exception cref="Exception">mensagem de erro</exception>
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
             try
