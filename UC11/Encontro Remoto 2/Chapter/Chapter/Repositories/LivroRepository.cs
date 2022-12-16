@@ -49,6 +49,11 @@ namespace Chapter.Repositories
         {
             return _chapterContext.Livros.Find(id);
         }
+        
+        public Livro BuscarPorTitulo(string titulo)
+        {
+            return _chapterContext.Livros.FirstOrDefault(t => t.Titulo == titulo.Trim());
+        }
 
         public void Cadastrar(Livro livro)
         {

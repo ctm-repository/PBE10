@@ -17,5 +17,7 @@ namespace Chapter.Interfaces
         void Atualizar(int id, Livro livro);
 
         void Deletar(int id);
+
+        Livro BuscarPorTitulo(string titulo);
     }
 }

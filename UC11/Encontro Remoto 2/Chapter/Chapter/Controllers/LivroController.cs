@@ -1,4 +1,5 @@
-﻿using Chapter.Models;
+﻿using Chapter.Interfaces;
+using Chapter.Models;
 using Chapter.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,11 +11,11 @@ namespace Chapter.Controllers
     [ApiController]//identificação que é uma classe controladora
     public class LivroController : ControllerBase//herança da classe ControllerBase
     {
-        private readonly LivroRepository _livroRepository;//variável privada criada para armazenar os dados do repositório
+        private readonly ILivroRepository _iLivroRepository;//variável privada criada para armazenar os dados do repositório
 
-        public LivroController(LivroRepository livroRepository)//injeção de dependência: o controller depende do repository
+        public LivroController(ILivroRepository iLivroRepository)//injeção de dependência: o controller depende do repository
         {
-            _livroRepository = livroRepository;//armazenamento das informações do repositório dentro da variável privada
+            _iLivroRepository = iLivroRepository;//armazenamento das informações do repositório dentro da variável privada
         }
 
         //IActionResult : https://learn.microsoft.com/pt-br/aspnet/core/web-api/action-return-types?view=aspnetcore-7.0
@@ -29,7 +30,7 @@ namespace Chapter.Controllers
         {
             try
             {
-                return Ok(_livroRepository.Ler());
+                return Ok(_iLivroRepository.Ler());
             }
             catch (Exception e)
             {
@@ -48,7 +49,7 @@ namespace Chapter.Controllers
         {
             try
             {
-                Livro livro =  _livroRepository.BuscarPorId(id);
+                Livro livro =  _iLivroRepository.BuscarPorId(id);
 
                 if (livro == null)
                 {
@@ -73,7 +74,7 @@ namespace Chapter.Controllers
         {
             try
             {
-                _livroRepository.Cadastrar(livro);
+                _iLivroRepository.Cadastrar(livro);
                 return Ok(livro);   
             }
             catch (Exception e)
@@ -94,7 +95,7 @@ namespace Chapter.Controllers
         {
             try
             {
-                _livroRepository.Atualizar(id, livro);
+                _iLivroRepository.Atualizar(id, livro);
                 return StatusCode(204);
             }
             catch (Exception e)
@@ -114,8 +115,27 @@ namespace Chapter.Controllers
         {
             try
             {
-                _livroRepository.Deletar(id);
+                _iLivroRepository.Deletar(id);
                 return StatusCode(204);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        [HttpGet("titulo/{titulo}")]
+        public IActionResult GetByTitulo(string titulo) 
+        {
+            try
+            {
+                Livro livro = _iLivroRepository.BuscarPorTitulo(titulo);
+
+                if (livro == null)
+                {
+                    return NotFound();
+                }
+                return Ok(livro);
             }
             catch (Exception e)
             {
