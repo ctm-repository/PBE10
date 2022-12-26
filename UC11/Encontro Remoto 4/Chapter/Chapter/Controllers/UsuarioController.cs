@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Chapter.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class UsuarioController : ControllerBase

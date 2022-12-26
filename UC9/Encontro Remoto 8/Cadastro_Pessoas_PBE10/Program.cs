@@ -145,18 +145,7 @@ do
                         //adicionamos a pessoa cadastrada dentro da lista
                         listaPf.Add(novaPessoaFisica);
 
-                        // //aqui vamos instanciar um pacote para gerar
-                        // //um arquivo txt
-                        // //instanciamos uma classe e passamos o nome que
-                        // //desejo para o arquivo como parametro (nome.txt)
-                        // //ele vai criar esse arquivo na root do projeto
-
-                        // StreamWriter sw = new StreamWriter($"{novaPessoaFisica.Nome}.txt");  //exemplo: Carlos.txt
-                        // sw.WriteLine(novaPessoaFisica.Nome); //exemplo: Carlos
-                        // sw.Close();
-
-
-                        //outra maneira de fazer(descartando o Close();)
+                        
                         //enquanto estiver executando algo dentro das chaves
                         //o recurso passado como parametro estará disponível
                         using(StreamWriter sw = new StreamWriter($"{novaPessoaFisica.Nome}.txt"))//using statement

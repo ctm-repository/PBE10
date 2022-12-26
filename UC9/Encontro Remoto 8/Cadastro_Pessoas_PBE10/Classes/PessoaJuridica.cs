@@ -3,16 +3,23 @@ using Cadastro_Pessoas_PBE10.Interfaces;
 
 namespace Cadastro_Pessoas_PBE10.Classes
 {
-    //classe Pessoa Juridica herda da superclasse Pessoa
+    /// <summary>
+    /// classe Pessoa Juridica herda da superclasse Pessoa
+    /// </summary>
     public class PessoaJuridica : Pessoa, IPessoaJuridica
     {
-        //atributos da classe Pessoa Juridica
+        //propriedades da classe Pessoa Juridica
         public string? RazaoSocial { get; set; }
         public string? Cnpj { get; set; }
-        public string Caminho { get; private set; } = "Database/PessoaJuridica.csv";
-        
-        
+        public string Caminho { get; private set; } = "Database/PessoaJuridica.csv";//caminho do arquivo csv
 
+
+
+        /// <summary>
+        /// método para calcular imposto - Sobrescrita da classe abstrata
+        /// </summary>
+        /// <param name="rendimento">rendimento da pessia jurídica</param>
+        /// <returns>valor do imposto a ser pago</returns>
         public override float PagarImposto(float rendimento)
         {
             if (rendimento <= 3000)
@@ -34,10 +41,17 @@ namespace Cadastro_Pessoas_PBE10.Classes
         }
 
 
-        //58.635.559/0001-55 : 18 CARACTERES
-        //58635559000155 : 14 CARACTERES
+
+        /// <summary>
+        /// método para validar formato de um cnpj com 18 ou 14 caracteres
+        /// </summary>
+        /// <param name="cnpj">cnpj a ser validado</param>
+        /// <returns>true ou false</returns>
         public bool ValidarCnpj(string cnpj)
         {
+            //58.635.559/0001-55 : 18 CARACTERES
+            //58635559000155 : 14 CARACTERES
+
             if (Regex.IsMatch(cnpj, @"(^(\d{2}.\d{3}.\d{3}/\d{4}-\d{2})|(\d{14})$)"))
             {
                 if (cnpj.Length == 18)
@@ -58,7 +72,12 @@ namespace Cadastro_Pessoas_PBE10.Classes
             return false;
         }
 
-        // método para inserir uma pessoa juridica em um arquivo csv 
+
+
+        /// <summary>
+        /// método para inserir uma pessoa juridica em um arquivo csv 
+        /// </summary>
+        /// <param name="pj">objeto a ser inserido</param>
         public void Inserir(PessoaJuridica pj)
         {
             //chamada do método para verificar se o caminho já existe, ou seja a pasta e o arquivo
@@ -67,14 +86,19 @@ namespace Cadastro_Pessoas_PBE10.Classes
             //criado um array de strings que recebe o objeto transformado em strings, ou seja, em partes
             //feito dessa maneira pq o método que vai inserir os dados espera receber um array de strings 
             //padrão que será salvo dentro do arquivo
-            string[] pjStrings = {$"{pj.Nome},{pj.Cnpj},{pj.RazaoSocial}"};
+            string[] pjStrings = { $"{pj.Nome},{pj.Cnpj},{pj.RazaoSocial}" };
 
             //metodo que salva o conteúdo dentro do arquivo
             //AppendAllLines = método que vai inserir todas as linhas dentro do arquivo
             File.AppendAllLines(Caminho, pjStrings);
         }
 
-        // método para listar os itens do arquivo csv
+
+
+        /// <summary>
+        /// método para listar os objetos do arquivo csv
+        /// </summary>
+        /// <returns>a lista dos objetos salvos dentro do arquivo csv</returns>
         public List<PessoaJuridica> LerArquivo()
         {
             //criado uma lista para armazenar os itens lidos no csv

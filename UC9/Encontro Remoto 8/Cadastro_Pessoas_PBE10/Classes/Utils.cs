@@ -1,7 +1,16 @@
 namespace Cadastro_Pessoas_PBE10.Classes
 {
+    /// <summary>
+    /// classe estática - vai conter os métodos estáticos
+    /// </summary>
     static class Utils
     {
+        /// <summary>
+        /// método para exibir barra de carregamento
+        /// </summary>
+        /// <param name="texto">texto que deseja exibir</param>
+        /// <param name="tempo">tempo que deseja exibir</param>
+        /// <param name="quantidade">quantidade de vezez que vai repetir o texto</param>
         public static void BarraCarregamento(string texto, int tempo, int quantidade)
         {
             Console.BackgroundColor = ConsoleColor.Yellow;
@@ -17,8 +26,10 @@ namespace Cadastro_Pessoas_PBE10.Classes
         }
 
 
-        //"Database/PessoaJuridica.csv"     
-        //método para verificar se existe o Caminho = "Database/PessoaJuridica.csv"
+        /// <summary>
+        /// //método para verificar se existe o Caminho
+        /// </summary>
+        /// <param name="caminho">caminho  ser veriicado : "Database/PessoaJuridica.csv"</param>       
         public static void VerificarPastaArquivo(string caminho)
         {
             //dar o split na / do caminho, e pegar a posição 0

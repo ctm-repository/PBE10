@@ -2,13 +2,21 @@ using Cadastro_Pessoas_PBE10.Interfaces;
 
 namespace Cadastro_Pessoas_PBE10.Classes
 {
-    //classe Pessoa Fisica que herda da superclasse Pessoa
+    /// <summary>
+    /// classe Pessoa Fisica que herda da superclasse Pessoa
+    /// </summary>
     public class PessoaFisica : Pessoa, IPessoaFisica
     {
-        //atributos da classe Pessoa Fisica
+        //propiedades da classe Pessoa Fisica
         public string? Cpf { get; set; }
         public DateTime DataNascimento { get; set; }
 
+
+        /// <summary>
+        /// método para calcular imposto - sobrescrita da classe abstrata
+        /// </summary>
+        /// <param name="rendimento">rendimento da pessoa física</param>
+        /// <returns>valor do imposto a ser pago</returns>
         public override float PagarImposto(float rendimento)
         {
             if (rendimento <= 1500)
@@ -29,6 +37,12 @@ namespace Cadastro_Pessoas_PBE10.Classes
             }
         }
 
+
+        /// <summary>
+        /// método para validar se uma pessoa é maior de idade
+        /// </summary>
+        /// <param name="datanascimento">data de nascimento do tipo DateTime</param>
+        /// <returns>true ou false</returns>
         public bool ValidarDataNascimento(DateTime datanascimento)
         {
             //DateTime.today pega a data
@@ -47,6 +61,12 @@ namespace Cadastro_Pessoas_PBE10.Classes
             return false;
         }
 
+
+        /// <summary>
+        /// método para validar se uma pessoa é maior de idade 
+        /// </summary>
+        /// <param name="datanascimento">data de nascimento do tipo string</param>
+        /// <returns>true ou false</returns>
         public bool ValidarDataNascimento(string datanascimento)
         {
             DateTime dataConvertida;
